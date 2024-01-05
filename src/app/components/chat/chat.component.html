@@ -1,0 +1,18 @@
+<section class="section-chatbox">
+  <ng-container *ngFor="let chat of chatThread">
+    <!-- user -->
+    <ion-card color="primary" class="btn-user" color="{{ chat[0] === 0 ? 'primary' : 'medium' }}" class="{{ chat[0] === 0 ? 'btn-user' : 'btn-anonym' }}">
+      <p>{{ chat[2]  }}</p>
+    </ion-card>
+    <br>
+  </ng-container>
+  
+
+  
+  <br><br><br>
+  <ion-input fill="outline" placeholder="Write a message...">
+    <ion-button fill="clear" slot="end">
+      <ion-icon name="send" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-input>
+</section>

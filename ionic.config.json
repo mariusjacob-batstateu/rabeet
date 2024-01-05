@@ -1,0 +1,7 @@
+{
+  "name": "rabeet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true" scroll-y="false">
+  <ion-button fill="clear"><ion-icon name="settings-outline" size="large"></ion-icon></ion-button>
+  <ion-text>
+    <h1 class="h1-rabeet">rabeet</h1>
+  </ion-text>
+  <ion-text>
+    <h2>Best way to call someone anonymously.</h2>
+  </ion-text>
+
+  <ion-input fill="outline" placeholder="Type any topic you're interested (optional)" [(ngModel)]="interestInput" (keyup.enter)="addInterest()">
+    <ion-button fill="clear" slot="end" (click)="addInterest()">
+      <ion-icon name="add" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-input>
+
+
+  <ion-button color="secondary" *ngFor="let interest of interests; let i=index" (click)="delInterest(i)" class="btn-interests">
+    {{ interest }}
+    <ion-icon name="close"></ion-icon>
+  </ion-button>
+
+
+  <br><br>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block">Group</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block">Solo</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

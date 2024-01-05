@@ -1,0 +1,63 @@
+ion-content{
+    text-align: center;
+}
+
+.txt-user{
+    font-size: clamp(20px, 5vw, 40px);
+    text-align: center;
+}
+.col-action{
+    // display: flex;
+    // justify-content:space-around;
+
+    ion-button{
+        height: clamp(30px, 20vw, 100px);
+        width: clamp(30px, 20vw, 100px);
+    }
+}
+
+.img-user{
+    width: clamp(150px, 40vw, 500px);
+    border-radius: 50%;
+}
+
+
+ion-range{
+    padding-inline: 10%;
+}
+
+.section-chatbox{
+    text-align: left;
+    padding-top: 500px;
+    ion-card{
+        max-width: 60%;
+        p{
+            text-align: center;
+        }
+    }
+    .chat-user{
+        margin-left: auto;
+    }
+}
+.section-chatscroll{
+    max-height: 38vh;
+    overflow-y: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+    // ion-content{
+    //     header{
+    //         background-color: rebeccapurple;
+    //     }
+    //     .section-anonymInfo{
+    //         background-color: yellow;
+    //         height: 40vh;
+    //     }
+    
+    //     .grid-action{
+    //         background-color: blue;
+    //         height: 40vh;
+    //     }
+    // }
+
+}
