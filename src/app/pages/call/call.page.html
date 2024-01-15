@@ -69,25 +69,43 @@
   
   <!-- action buttons -->
 
-  <section class="section-chatbox">
-    <section class="section-chatscroll">
-      <ng-container *ngFor="let chat of chatThread">
-        <!-- user -->
-        <ion-card color="primary" color="{{ chat[0] === 0 ? 'primary' : 'medium' }}" class="{{ chat[0] === 0 ? 'chat-user' : 'chat-anonym' }}">
+ 
+</ion-content>
+
+<!-- <ion-content>
+  <ion-list>
+    
+  </ion-list>
+
+
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+ </ion-content> -->
+
+
+<ion-footer class="footer-chatbox">
+  <section class="section-chatscroll">
+    <ng-container *ngFor="let chat of chatThread" id="messagesContent">
+      <section class="{{ chat[0] === 0 ? 'chat-user' : 'chat-anonym' }}">
+        <ion-item color="{{ chat[0] === 0 ? 'primary' : 'medium' }}">
           <p>{{ chat[2]  }}</p>
-        </ion-card>
-      </ng-container>
-    </section>
-    
-  
-    
-    <br>
-    <ion-input fill="outline" placeholder="Write a message..." (keyup.enter)="sendChat()" [(ngModel)]="userChat">
-      <ion-button fill="clear" slot="end" (click)="sendChat()">
-        <ion-icon name="send" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-input>
+        </ion-item>
+      </section>
+      
+      <br>
+    </ng-container>
   </section>
 
+ 
 
-</ion-content>
+  <section class="flex">
+    <ion-input fill="outline" placeholder="Write a message..." (keyup.enter)="sendChat()" [(ngModel)]="userChat"></ion-input>
+    <ion-button fill="clear" slot="end" (click)="sendChat()">
+      <ion-icon name="send" slot="icon-only"></ion-icon>
+    </ion-button>
+  </section>
+</ion-footer>

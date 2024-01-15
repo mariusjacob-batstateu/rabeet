@@ -26,22 +26,30 @@ ion-range{
     padding-inline: 10%;
 }
 
-.section-chatbox{
-    text-align: left;
-    padding-top: 500px;
-    ion-card{
+.footer-chatbox{
+    margin-bottom: -500px;
+    border-top: 10px #303e77 solid;
+    .section-chatscroll{
+        max-height: 38vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+
+    ion-item{
+        display: inline-block;
+        width: auto;
         max-width: 60%;
-        p{
-            text-align: center;
-        }
+        border-radius: 30px;
     }
     .chat-user{
-        margin-left: auto;
+        text-align: right;
     }
 }
-.section-chatscroll{
-    max-height: 38vh;
-    overflow-y: scroll;
+.flex{
+    display: flex;
+    align-items: center;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { InfiniteScrollCustomEvent, IonContent } from '@ionic/angular';
 import anime from 'animejs/lib/anime.es.js';
 import Swiper from 'swiper';
 
@@ -9,6 +10,7 @@ import Swiper from 'swiper';
   styleUrls: ['./call.page.scss']
 })
 export class CallPage implements OnInit {
+  // @ViewChild('content') private content: any;
 
   // anonym list
   anonymCall: any[]=[
@@ -35,31 +37,25 @@ export class CallPage implements OnInit {
   // UTILITIES
   volume: number=20;
 
-
-  @ViewChild('swiper')
-  swiperRef: ElementRef | undefined;
-  swiper?: Swiper
-
-
   constructor() {
     this.anonymCall.push(["user111"])
     this.anonymCall.push(["user222"])
     this.anonymCall.push(["user333"])
 
     this.chatThread.push([0, "Jul", "messfdfdfdfage1 lorem10fdfdfdfdfdfd dffdfd dfdfd"])
-    this.chatThread.push([0, "Aug", "message2"])
-    this.chatThread.push([1, "Sep", "message3"])
+    this.chatThread.push([0, "Aug", "messacxcxcxcxcge2"])
+    this.chatThread.push([1, "Sep", "messagxxe3"])
     this.chatThread.push([0, "Jul", "messfdfdfdfage1 lorem10fdfdfdfdfdfd dffdfd dfdfd"])
-    this.chatThread.push([0, "Aug", "message2"])
-    this.chatThread.push([1, "Sep", "message3"])
-    this.chatThread.push([0, "Jul", "messfdfdfdfage1 lorem10fdfdfdfdfdfd dffdfd dfdfd"])
-    this.chatThread.push([0, "Aug", "message2"])
-    this.chatThread.push([1, "Sep", "message3"])
+    this.chatThread.push([0, "Aug", "messagexcxcxcxcxcxccccc2"])
+    this.chatThread.push([1, "Sep", "messagcxcxcxcxe3"])
+    this.chatThread.push([0, "Jul", "messfdfdfdfage1 lorem10fdfdfdffffffffffffffffffffffffffffffffffffffffffffffffffffffdfdfd dffdfd dfdfd"])
+    this.chatThread.push([0, "Aug", "message2cxcxcxc"])
+    this.chatThread.push([1, "Sep", "messa"])
    }
 
   ngOnInit() {
   }
-
+  
 
 
   // Utilities
@@ -122,9 +118,9 @@ export class CallPage implements OnInit {
 
       // chat popup animation
       anime({
-          targets: '.section-chatbox', // Replace with your element's class or ID
-          paddingTop:0,
-          duration: 2000
+          targets: '.footer-chatbox', // Replace with your element's class or ID
+          marginBottom:'0',
+          duration: 2000,
         }
       );
     }
@@ -140,8 +136,8 @@ export class CallPage implements OnInit {
 
     // chat popup animation
     anime({
-          targets: '.section-chatbox', // Replace with your element's class or ID
-          paddingTop:'500px',
+          targets: '.footer-chatbox', // Replace with your element's class or ID
+          marginBottom:'-500px',
           duration: 2000
         }
       );
@@ -205,17 +201,18 @@ export class CallPage implements OnInit {
 
   sendChat(){
     this.chatThread.push([0, "Sep", this.userChat])
+    this.userChat=""
   }
 
 
-  swiperReady(){
-    this.swiper=this.swiperRef?.nativeElement.swiper
-    this.swiper?.disable
-  }
+  // swiperReady(){
+  //   this.swiper=this.swiperRef?.nativeElement.swiper
+  //   this.swiper?.disable
+  // }
 
-  goNext(){
-    this.swiper?.slideNext()
-  }
+  // goNext(){
+  //   this.swiper?.slideNext()
+  // }
   
 
 }
